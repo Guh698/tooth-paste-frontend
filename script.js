@@ -1020,4 +1020,5 @@ document.addEventListener("DOMContentLoaded", () => {
   momentsTL.to(".img5", { y: "-70%" }, "-=0.1");
   momentsTL.to(".img6", { opacity: 1, scaleX: 1 }, "-=0.7");
   momentsTL.to(".img6", { y: "-70%" }, "-=0.1");
+  opening();
 });
