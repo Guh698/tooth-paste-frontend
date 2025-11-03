@@ -80,11 +80,13 @@ header {
   height: 6rem;
   width: 100%;
   border: 1px solid #fff;
+  opacity: 0;
 }
 
 .hero {
   height: 175dvh;
   gap: 4rem;
+  opacity: 0;
 }
 
 .hero-product-case {

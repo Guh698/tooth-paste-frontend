@@ -34,6 +34,8 @@ document.addEventListener("DOMContentLoaded", () => {
           repeat: 0,
           onComplete: () => {
             gsap.to(".loading-test", { opacity: 0 });
+            gsap.to(".hero", { opacity: 1 });
+            gsap.to("header", { opacity: 1 });
           },
         });
         take2Tl.to("#head-base", {
