@@ -1022,9 +1022,7 @@ document.addEventListener("DOMContentLoaded", () => {
   momentsTL.to(".img5", { y: "-90%" }, "-=0.1");
   momentsTL.to(".img6", { opacity: 1, scaleX: 1 }, "-=0.7");
   momentsTL.to(".img6", { y: "-90%" }, "-=0.1");
-  /*opening();*/
-  gsap.set(".hero", { opacity: 1 });
-  gsap.set("header", { opacity: 1 });
+  opening();
   gsap.set(".text", { opacity: 0, y: 50 });
 
   const texts = document.querySelectorAll(".text");
