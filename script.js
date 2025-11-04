@@ -1011,18 +1011,81 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   momentsTL.to(".img1", { opacity: 1, scaleX: 1 });
-  momentsTL.to(".img1", { y: "-70%" }, "-=0.1");
+  momentsTL.to(".img1", { y: "-90%" }, "-=0.1");
   momentsTL.to(".img2", { opacity: 1, scaleX: 1 }, "-=0.7");
-  momentsTL.to(".img2", { y: "-70%" }, "-=0.1");
+  momentsTL.to(".img2", { y: "-90%" }, "-=0.1");
   momentsTL.to(".img3", { opacity: 1, scaleX: 1 }, "-=0.7");
-  momentsTL.to(".img3", { y: "-70%" }, "-=0.1");
+  momentsTL.to(".img3", { y: "-90%" }, "-=0.1");
   momentsTL.to(".img4", { opacity: 1, scaleX: 1 }, "-=0.7");
-  momentsTL.to(".img4", { y: "-70%" }, "-=0.1");
+  momentsTL.to(".img4", { y: "-90%" }, "-=0.1");
   momentsTL.to(".img5", { opacity: 1, scaleX: 1 }, "-=0.7");
-  momentsTL.to(".img5", { y: "-70%" }, "-=0.1");
+  momentsTL.to(".img5", { y: "-90%" }, "-=0.1");
   momentsTL.to(".img6", { opacity: 1, scaleX: 1 }, "-=0.7");
-  momentsTL.to(".img6", { y: "-70%" }, "-=0.1");
+  momentsTL.to(".img6", { y: "-90%" }, "-=0.1");
   /*opening();*/
   gsap.set(".hero", { opacity: 1 });
   gsap.set("header", { opacity: 1 });
+  gsap.set(".text", { opacity: 0, y: 50 });
+
+  const texts = document.querySelectorAll(".text");
+
+  texts.forEach((text) => {
+    ScrollTrigger.create({
+      trigger: text,
+      start: "top 70%",
+      scrub: true,
+      onEnter: () => {
+        gsap.to(text, { opacity: 1, y: 0, duration: 0.7 });
+      },
+      onLeaveBack: () => {
+        gsap.to(text, { opacity: 0, y: 50, duration: 0.7 });
+      },
+    });
+  });
+
+  ScrollTrigger.create({
+    trigger: ".feature2-animation-container",
+    start: "top 70%",
+    scrub: true,
+    onEnter: () => {
+      gsap.to(".feature2-animation-container img", {
+        x: 0,
+        duration: 4,
+        ease: "power1.inOut",
+      });
+      gsap.to(".feature2-animation-container svg", {
+        x: 0,
+        duration: 4,
+        ease: "power1.inOut",
+      });
+    },
+    onEnterBack: () => {
+      gsap.to(".feature2-animation-container img", {
+        x: 0,
+        duration: 4,
+        ease: "power1.inOut",
+      });
+      gsap.to(".feature2-animation-container svg", {
+        x: 0,
+        duration: 4,
+        ease: "power1.inOut",
+      });
+    },
+    onLeave: () => {
+      gsap.set(".feature2-animation-container img", {
+        x: "-70%",
+      });
+      gsap.set(".feature2-animation-container svg", {
+        x: "70%",
+      });
+    },
+    onLeaveBack: () => {
+      gsap.set(".feature2-animation-container img", {
+        x: "-70%",
+      });
+      gsap.set(".feature2-animation-container svg", {
+        x: "70%",
+      });
+    },
+  });
 });
