@@ -1,5 +1,6 @@
 gsap.registerPlugin(
   ScrollTrigger,
+  ScrollSmoother,
   SplitText,
   Draggable,
   InertiaPlugin,
@@ -10,6 +11,20 @@ gsap.registerPlugin(
 );
 
 document.addEventListener("DOMContentLoaded", () => {
+  const smoother = ScrollSmoother.create({
+    wrapper: "#smooth-wrapper",
+    content: "#smooth-content",
+    smooth: 1,
+  });
+
+  function pauseScroll() {
+    smoother.paused(true);
+  }
+
+  function resumeScroll() {
+    smoother.paused(false);
+  }
+
   function opening() {
     let tl = gsap.timeline({
       repeat: 9,
@@ -36,6 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
             gsap.to(".website-opening", { opacity: 0, duration: 1 });
             gsap.to(".hero", { opacity: 1 });
             gsap.to("header", { opacity: 1 });
+            resumeScroll();
           },
         });
         take2Tl.to("#head-base", {
@@ -1004,7 +1020,7 @@ document.addEventListener("DOMContentLoaded", () => {
     scrollTrigger: {
       trigger: ".feature1",
       start: "center center",
-      end: "+=3500",
+      end: "+=3000",
       pin: true,
       scrub: true,
     },
@@ -1022,7 +1038,7 @@ document.addEventListener("DOMContentLoaded", () => {
   momentsTL.to(".img5", { y: "-90%" }, "-=0.1");
   momentsTL.to(".img6", { opacity: 1, scaleX: 1 }, "-=0.7");
   momentsTL.to(".img6", { y: "-90%" }, "-=0.1");
-  opening();
+
   gsap.set(".text", { opacity: 0, y: 50 });
 
   const texts = document.querySelectorAll(".text");
@@ -1086,4 +1102,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     },
   });
+
+  pauseScroll();
+  opening();
 });
