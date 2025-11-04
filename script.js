@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
           delay: 1.3,
           duration: 2.7,
         });
-        gsap.to(".loading-test .take2-mov1", {
+        gsap.to(".website-opening .take2-mov1", {
           x: "10%",
           delay: 0.3,
           duration: 2.7,
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let take2Tl = gsap.timeline({
           repeat: 0,
           onComplete: () => {
-            gsap.to(".loading-test", { opacity: 0 });
+            gsap.to(".website-opening", { opacity: 0, duration: 1 });
             gsap.to(".hero", { opacity: 1 });
             gsap.to("header", { opacity: 1 });
           },
@@ -844,17 +844,17 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     });
     let CenarioTL = gsap.timeline({ repeat: -1, yoyo: true });
-    gsap.to(".loading-test .cenario1", {
+    gsap.to(".website-opening .cenario1", {
       scale: 1.5,
       duration: 5.7,
       ease: "none",
     });
-    gsap.to(".loading-test", {
+    gsap.to(".website-opening", {
       opacity: 1,
       duration: 1.3,
     });
-    CenarioTL.to(".loading-test .cenario1", { y: "-0.7%", ease: "none" });
-    CenarioTL.to(".loading-test .cenario1", { y: "0.7%", ease: "none" });
+    CenarioTL.to(".website-opening .cenario1", { y: "-0.7%", ease: "none" });
+    CenarioTL.to(".website-opening .cenario1", { y: "0.7%", ease: "none" });
 
     tl.to("#blusa-base", { morphSVG: "#blusa-base-mov2", duration: 0.5 }, "<");
     tl.to(
@@ -1022,5 +1022,7 @@ document.addEventListener("DOMContentLoaded", () => {
   momentsTL.to(".img5", { y: "-70%" }, "-=0.1");
   momentsTL.to(".img6", { opacity: 1, scaleX: 1 }, "-=0.7");
   momentsTL.to(".img6", { y: "-70%" }, "-=0.1");
-  opening();
+  /*opening();*/
+  gsap.set(".hero", { opacity: 1 });
+  gsap.set("header", { opacity: 1 });
 });
