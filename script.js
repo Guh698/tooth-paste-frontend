@@ -1027,17 +1027,17 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   momentsTL.to(".img1", { opacity: 1, scaleX: 1 });
-  momentsTL.to(".img1", { y: "-90%" }, "-=0.1");
+  momentsTL.to(".img1", { y: "-100%" }, "-=0.1");
   momentsTL.to(".img2", { opacity: 1, scaleX: 1 }, "-=0.7");
-  momentsTL.to(".img2", { y: "-90%" }, "-=0.1");
+  momentsTL.to(".img2", { y: "-100%" }, "-=0.1");
   momentsTL.to(".img3", { opacity: 1, scaleX: 1 }, "-=0.7");
-  momentsTL.to(".img3", { y: "-90%" }, "-=0.1");
+  momentsTL.to(".img3", { y: "-100%" }, "-=0.1");
   momentsTL.to(".img4", { opacity: 1, scaleX: 1 }, "-=0.7");
-  momentsTL.to(".img4", { y: "-90%" }, "-=0.1");
+  momentsTL.to(".img4", { y: "-100%" }, "-=0.1");
   momentsTL.to(".img5", { opacity: 1, scaleX: 1 }, "-=0.7");
-  momentsTL.to(".img5", { y: "-90%" }, "-=0.1");
+  momentsTL.to(".img5", { y: "-100%" }, "-=0.1");
   momentsTL.to(".img6", { opacity: 1, scaleX: 1 }, "-=0.7");
-  momentsTL.to(".img6", { y: "-90%" }, "-=0.1");
+  momentsTL.to(".img6", { y: "-100%" }, "-=0.1");
 
   gsap.set(".text", { opacity: 0, y: 50 });
 
@@ -1101,6 +1101,40 @@ document.addEventListener("DOMContentLoaded", () => {
         x: "70%",
       });
     },
+  });
+
+  gsap.to(".feature3-closeIMG", {
+    y: "-7%",
+    scrollTrigger: {
+      trigger: ".feature3",
+      start: "top center",
+      scrub: true,
+      ease: "none",
+    },
+  });
+
+  gsap.to(".feature3-closeIMG img", {
+    y: "-10%",
+    scrollTrigger: {
+      trigger: ".feature3",
+      start: "top center",
+      scrub: true,
+      ease: "none",
+    },
+  });
+
+  let footerTL = gsap.timeline({
+    scrollTrigger: {
+      trigger: "footer",
+      start: "top bottom",
+      scrub: true,
+      ease: "power4.inOut",
+    },
+  });
+
+  footerTL.to(".footer-overlay", {
+    y: "-127%",
+    duration: 2.7,
   });
 
   pauseScroll();
