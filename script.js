@@ -1137,6 +1137,6 @@ document.addEventListener("DOMContentLoaded", () => {
     duration: 2.7,
   });
 
-  /* pauseScroll();
-  opening();*/
+  pauseScroll();
+  opening();
 });
