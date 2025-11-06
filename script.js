@@ -1114,7 +1114,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   gsap.to(".feature3-closeIMG img", {
-    y: "-10%",
+    y: "10%",
     scrollTrigger: {
       trigger: ".feature3",
       start: "top center",
@@ -1137,6 +1137,6 @@ document.addEventListener("DOMContentLoaded", () => {
     duration: 2.7,
   });
 
-  pauseScroll();
-  opening();
+  /* pauseScroll();
+  opening();*/
 });
