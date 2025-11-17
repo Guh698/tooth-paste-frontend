@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
     wrapper: "#smooth-wrapper",
     content: "#smooth-content",
     smooth: 1,
-    smoothTouch: 0.1,
   });
 
   function pauseScroll() {
@@ -1020,28 +1019,39 @@ document.addEventListener("DOMContentLoaded", () => {
     tl.to("#path56", { morphSVG: "#path56-mov2", duration: 0.5 }, "<");
   }
 
-  let momentsTL = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".feature1",
-      start: "center center",
-      end: "+=3000",
-      pin: true,
-      scrub: true,
+  ScrollTrigger.matchMedia({
+    "(min-width: 1024px)": function () {
+      let momentsTL = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".feature1",
+          start: "center center",
+          end: "+=3000",
+          pin: true,
+          scrub: true,
+        },
+      });
+
+      momentsTL.to(".img1", { opacity: 1, scaleX: 1 });
+      momentsTL.to(".img1", { y: "-100%" }, "-=0.1");
+      momentsTL.to(".img2", { opacity: 1, scaleX: 1 }, "-=0.7");
+      momentsTL.to(".img2", { y: "-100%" }, "-=0.1");
+      momentsTL.to(".img3", { opacity: 1, scaleX: 1 }, "-=0.7");
+      momentsTL.to(".img3", { y: "-100%" }, "-=0.1");
+      momentsTL.to(".img4", { opacity: 1, scaleX: 1 }, "-=0.7");
+      momentsTL.to(".img4", { y: "-100%" }, "-=0.1");
+      momentsTL.to(".img5", { opacity: 1, scaleX: 1 }, "-=0.7");
+      momentsTL.to(".img5", { y: "-100%" }, "-=0.1");
+      momentsTL.to(".img6", { opacity: 1, scaleX: 1 }, "-=0.7");
+      momentsTL.to(".img6", { y: "-100%" }, "-=0.1");
+
+      pauseScroll();
+      opening();
+    },
+    "(max-width: 1024px)": function () {
+      gsap.set([".hero, header"], { opacity: 1 });
+      heroTL.play();
     },
   });
-
-  momentsTL.to(".img1", { opacity: 1, scaleX: 1 });
-  momentsTL.to(".img1", { y: "-100%" }, "-=0.1");
-  momentsTL.to(".img2", { opacity: 1, scaleX: 1 }, "-=0.7");
-  momentsTL.to(".img2", { y: "-100%" }, "-=0.1");
-  momentsTL.to(".img3", { opacity: 1, scaleX: 1 }, "-=0.7");
-  momentsTL.to(".img3", { y: "-100%" }, "-=0.1");
-  momentsTL.to(".img4", { opacity: 1, scaleX: 1 }, "-=0.7");
-  momentsTL.to(".img4", { y: "-100%" }, "-=0.1");
-  momentsTL.to(".img5", { opacity: 1, scaleX: 1 }, "-=0.7");
-  momentsTL.to(".img5", { y: "-100%" }, "-=0.1");
-  momentsTL.to(".img6", { opacity: 1, scaleX: 1 }, "-=0.7");
-  momentsTL.to(".img6", { y: "-100%" }, "-=0.1");
 
   gsap.set(".text", { opacity: 0, y: 50 });
 
@@ -1140,9 +1150,6 @@ document.addEventListener("DOMContentLoaded", () => {
     y: "-127%",
     duration: 2.7,
   });
-
-  pauseScroll();
-  opening();
 
   heroTL.to("#path16-3", {
     morphSVG: "#path16-3-8",

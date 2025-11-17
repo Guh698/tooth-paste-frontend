@@ -88,14 +88,16 @@ header {
   top: 0;
   left: 0;
   height: 6rem;
-  width: 100%;
+  width: 100vw;
   opacity: 0;
   z-index: 10;
+  overflow: hidden;
 }
 
 header nav {
   padding-left: 6rem;
-  width: 100%;
+  width: 100vw;
+  overflow: hidden;
 }
 
 header nav a {
@@ -344,6 +346,7 @@ footer {
   width: 100%;
   background-color: #040422ff;
   z-index: -1;
+  overflow: hidden;
 }
 
 .footer-overlay {
@@ -360,7 +363,7 @@ footer {
   :root {
     --title-font-size: 7rem;
     --sub-title-font-size: 3rem;
-    --big-font-size: 2.7rem;
+    --big-font-size: 2.3rem;
     --normal-font-size: 2rem;
     --small-font-size: 1.6rem;
   }
@@ -384,8 +387,8 @@ footer {
   }
 
   .hero {
-    height: 120dvh;
-    justify-content: center;
+    height: 100dvh;
+    justify-content: end;
     gap: 9rem;
   }
 
