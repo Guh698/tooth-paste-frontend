@@ -26,6 +26,8 @@ document.addEventListener("DOMContentLoaded", () => {
     smoother.paused(false);
   }
 
+  let heroTL = gsap.timeline({ paused: true });
+
   function opening() {
     let tl = gsap.timeline({
       repeat: 9,
@@ -53,6 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
             gsap.to(".hero", { opacity: 1 });
             gsap.to("header", { opacity: 1 });
             resumeScroll();
+            heroTL.play();
           },
         });
         take2Tl.to("#head-base", {
@@ -1140,4 +1143,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
   pauseScroll();
   opening();
+
+  heroTL.to("#path16-3", {
+    morphSVG: "#path16-3-8",
+    duration: 1.3,
+    delay: 0.3,
+  });
+  heroTL.to("#path15-2", { morphSVG: "#path15-2-4", duration: 1.3 }, "<");
+  heroTL.to("#path17-2", { morphSVG: "#path17-2-6", duration: 1.3 }, "<");
+  heroTL.to("#path54-2", { morphSVG: "#path54-2-5", duration: 1.3 }, "<");
+  heroTL.to(
+    "#path16-3",
+    { morphSVG: "#path16-3-8-6", duration: 1.6, delay: 0.1 },
+    "<"
+  );
+  heroTL.to("#path15-2", { morphSVG: "#path15-2-4-9", duration: 1.6 }, "<");
+  heroTL.to("#path17-2", { morphSVG: "#path17-2-6-3", duration: 1.6 }, "<");
+  heroTL.to("#path54-2", { morphSVG: "#path54-2-5-7", duration: 1.6 }, "<");
+  heroTL.to(
+    "#path16-3",
+    { morphSVG: "#path16", duration: 1.7, delay: 0.1 },
+    "<"
+  );
+  heroTL.to("#path15-2", { morphSVG: "#path15", duration: 1.7 }, "<");
+  heroTL.to("#path17-2", { morphSVG: "#path17", duration: 1.7 }, "<");
+  heroTL.to("#path54-2", { morphSVG: "#path54", duration: 1.7 }, "<");
+  heroTL.to(
+    [".hero-phrase, .hero-btn, h1"],
+    {
+      opacity: 1,
+      duration: 1.3,
+      ease: "power1.in",
+    },
+    "-=.5"
+  );
 });

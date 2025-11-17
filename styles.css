@@ -25,6 +25,7 @@ html {
 
 body {
   background-color: var(--black);
+  overflow-x: hidden;
 }
 
 .display-center {
@@ -120,6 +121,21 @@ header nav a {
   width: 63%;
 }
 
+.hero-product-img {
+  position: relative;
+  width: 63%;
+}
+
+.hero-img-frame1 {
+  width: 100%;
+}
+
+.hero-img-frame2,
+.hero-img-frame3,
+.hero-img-frame4 {
+  display: none;
+}
+
 .hero-product-img::after {
   content: "";
   position: absolute;
@@ -139,6 +155,7 @@ h1 {
   font-size: var(--title-font-size);
   color: var(--white);
   font-weight: var(--bold-font-weight);
+  opacity: 0;
 }
 
 h2 {
@@ -167,6 +184,7 @@ h3 {
   border-radius: 2.7rem;
   color: var(--black);
   font-size: var(--normal-font-size);
+  opacity: 0;
 }
 
 .hero-phrase {
@@ -175,6 +193,7 @@ h3 {
   font-size: var(--big-font-size);
   font-weight: var(--bold-font-weight);
   color: var(--white-grey);
+  opacity: 0;
 }
 
 .feature1 {
@@ -283,6 +302,7 @@ h3 {
   padding-top: 10vh;
   justify-content: start;
   gap: 7rem;
+  overflow: hidden;
 }
 
 .feature3 h2 {
