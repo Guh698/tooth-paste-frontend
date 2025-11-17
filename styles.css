@@ -19,6 +19,7 @@ html {
   --sub-title-font-size: 7rem;
   --big-font-size: 2rem;
   --normal-font-size: 1.6rem;
+  --small-font-size: 1.6rem;
   --bold-font-weight: 700;
   --light-font-weight: 400;
 }
@@ -183,7 +184,7 @@ h3 {
   background-color: var(--white);
   border-radius: 2.7rem;
   color: var(--black);
-  font-size: var(--normal-font-size);
+  font-size: var(--small-font-size);
   opacity: 0;
 }
 
@@ -360,7 +361,8 @@ footer {
     --title-font-size: 7rem;
     --sub-title-font-size: 3rem;
     --big-font-size: 2.7rem;
-    --normal-font-size: 1.6rem;
+    --normal-font-size: 1.7rem;
+    --small-font-size: 1.6rem;
   }
 
   .website-opening svg {
@@ -445,7 +447,7 @@ footer {
   }
 
   .feature3-text {
-    width: 80%;
+    width: auto;
     text-align: center;
   }
 }
