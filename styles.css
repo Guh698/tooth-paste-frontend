@@ -359,10 +359,8 @@ footer {
   :root {
     --title-font-size: 7rem;
     --sub-title-font-size: 3rem;
-    --big-font-size: 2rem;
+    --big-font-size: 2.7rem;
     --normal-font-size: 1.6rem;
-    --bold-font-weight: 700;
-    --light-font-weight: 400;
   }
 
   .website-opening svg {
@@ -383,13 +381,20 @@ footer {
     top: 60%;
   }
 
+  .hero {
+    height: 120dvh;
+    justify-content: center;
+    gap: 9rem;
+  }
+
   .hero-product-img {
     position: relative;
-    width: 80%;
+    width: 100%;
+    height: 70%;
   }
 
   h1 {
-    top: 47%;
+    top: 37%;
   }
 
   .hero-btn {
@@ -406,11 +411,12 @@ footer {
   }
 
   .feature1 h2 {
-    width: 70%;
+    width: auto;
   }
 
   .feature1-text {
-    width: 70%;
+    width: 80%;
+    text-align: center;
   }
 
   .feature2-animation-container img {
@@ -430,14 +436,16 @@ footer {
   }
 
   .feature2-text {
-    width: 70%;
+    width: 80%;
+    text-align: center;
   }
 
   .feature3 h2 {
-    width: 70%;
+    width: auto;
   }
 
   .feature3-text {
-    width: 70%;
+    width: 80%;
+    text-align: center;
   }
 }
