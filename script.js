@@ -1044,11 +1044,363 @@ document.addEventListener("DOMContentLoaded", () => {
       momentsTL.to(".img6", { opacity: 1, scaleX: 1 }, "-=0.7");
       momentsTL.to(".img6", { y: "-100%" }, "-=0.1");
 
-      pauseScroll();
-      opening();
+      let feature3Tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".feature3",
+          start: "top top",
+          end: "+=6000",
+          scrub: true,
+          pin: true,
+          ease: "none",
+        },
+      });
+
+      /*feature3Tl.to(".feature3-animation-container h2", {
+        opacity: 1,
+        duration: 3,
+      });
+      feature3Tl.to(
+        ".feature3-animation-container h2",
+        {
+          opacity: 0,
+          duration: 3,
+        },
+        "+=7"
+      );*/
+
+      /*feature3Tl.to(".feature3-frame1", {
+        opacity: 1,
+        duration: 3,
+        ease: "none",
+      });*/
+      feature3Tl.to(
+        "#lado1-mov1",
+        {
+          morphSVG: "#lado1-mov2",
+          align: "#lado1-mov1",
+          transformOrigin: "50% 50%",
+          duration: 3,
+          ease: "none",
+        },
+        "<"
+      );
+      feature3Tl.to(
+        "#lado2-mov1",
+        {
+          morphSVG: "#lado2-mov2",
+          align: "#lado2-mov1",
+          duration: 3,
+          ease: "none",
+        },
+        "<"
+      );
+      feature3Tl.to(
+        "#lado3-mov1",
+        {
+          morphSVG: "#lado3-mov2",
+          align: "#lado3-mov1",
+          duration: 3,
+          ease: "none",
+        },
+        "<"
+      );
+      /*.to(
+        ".feature3-frame1",
+        { x: 0, duration: 3, ease: "none" },
+        "<"
+      );*/
+      /*  feature3Tl.to("#lado1-mov1", {
+        morphSVG: "#lado1-mov3",
+        duration: 3,
+        ease: "none",
+      });
+      feature3Tl.to(
+        "#lado2-mov1",
+        { morphSVG: "#lado2-mov3", duration: 3, ease: "none" },
+        "<"
+      );
+      feature3Tl.to(
+        "#lado3-mov1",
+        { morphSVG: "#lado3-mov3", duration: 3, ease: "none" },
+        "<"
+      );
+      feature3Tl.to(
+        ".feature3-frame1",
+        { x: 0, duration: 3, ease: "none" },
+        "<"
+      );
+      feature3Tl.to("#lado1-mov1", {
+        morphSVG: "#lado1-mov4",
+        duration: 3,
+        ease: "none",
+      });
+      feature3Tl.to(
+        "#lado2-mov1",
+        { morphSVG: "#lado2-mov4", duration: 3, ease: "none" },
+        "<"
+      );
+      feature3Tl.to(
+        "#lado3-mov1",
+        { morphSVG: "#lado3-mov4", duration: 3, ease: "none" },
+        "<"
+      );
+      feature3Tl.to(
+        ".feature3-frame1",
+        { x: "3%", duration: 3, ease: "none" },
+        "<"
+      );
+      feature3Tl.to("#lado1-mov1", {
+        morphSVG: "#lado1-mov5",
+        duration: 3,
+        ease: "none",
+      });
+      feature3Tl.to(
+        "#lado2-mov1",
+        { morphSVG: "#lado2-mov5", duration: 3, ease: "none" },
+        "<"
+      );
+      feature3Tl.to(
+        "#lado3-mov1",
+        { morphSVG: "#lado3-mov5", duration: 3, ease: "none" },
+        "<"
+      );
+      feature3Tl.to(
+        ".feature3-frame1",
+        { x: "7%", duration: 3, ease: "none" },
+        "<"
+      );
+      feature3Tl.to("#lado1-mov1", {
+        morphSVG: "#lado1-mov6",
+        duration: 3,
+        ease: "none",
+      });
+      feature3Tl.to(
+        "#lado2-mov1",
+        { morphSVG: "#lado2-mov6", duration: 2, ease: "none" },
+        "<"
+      );
+      feature3Tl.to(
+        "#lado3-mov1",
+        { morphSVG: "#lado3-mov6", duration: 3, ease: "none" },
+        "<"
+      );
+      feature3Tl.to(
+        ".feature3-frame1",
+        { x: "27%", duration: 3, ease: "none" },
+        "<"
+      );
+      feature3Tl.to(".feature3-frame1", {
+        x: "97%",
+        opacity: 0,
+        duration: 3,
+        ease: "none",
+      });
+
+      feature3Tl.set(".feature3-frame1", {
+        x: "7%",
+        opacity: 0,
+      });
+
+      feature3Tl.to(".feature3-take2-frame1 ", {
+        opacity: 1,
+        delay: 1.7,
+        duration: 3,
+        ease: "none",
+      });
+
+      feature3Tl.to(
+        "#lado1-take2-mov0",
+        { morphSVG: "#lado1-take2-mov1", duration: 3, ease: "none" },
+        "<"
+      );
+
+      feature3Tl.to(
+        "#lado1-take2-mov0",
+        { morphSVG: "#lado1-take2-mov2", duration: 3, ease: "none" },
+        "-=.3"
+      );
+
+      feature3Tl.to("#lado1-take2-mov0", {
+        morphSVG: "#lado1-take2-mov3",
+        duration: 3,
+        ease: "none",
+      });*/
+
+      /* pauseScroll();
+      opening();*/
+      gsap.set([".hero, header"], { opacity: 1 });
+      heroTL.play();
     },
     "(max-width: 1024px)": function () {
       gsap.set([".hero, header"], { opacity: 1 });
+      let mobileFeature3Tl = gsap.timeline({
+        repeat: -1,
+        ease: "none",
+      });
+
+      mobileFeature3Tl.to(".feature3-animation-container h2", {
+        opacity: 1,
+        duration: 1,
+        delay: 0.7,
+      });
+
+      mobileFeature3Tl.to(
+        ".feature3-animation-container h2",
+        {
+          opacity: 0,
+          duration: 1,
+        },
+        "+=1"
+      );
+
+      mobileFeature3Tl.to(".feature3-frame1", {
+        opacity: 1,
+        duration: 1,
+        ease: "none",
+      });
+      mobileFeature3Tl.to(
+        "#lado1-mov1",
+        { morphSVG: "#lado1-mov2", duration: 1, ease: "none" },
+        "<"
+      );
+      mobileFeature3Tl.to(
+        "#lado2-mov1",
+        { morphSVG: "#lado2-mov2", duration: 1, ease: "none" },
+        "<"
+      );
+      mobileFeature3Tl.to(
+        "#lado3-mov1",
+        { morphSVG: "#lado3-mov2", duration: 1, ease: "none" },
+        "<"
+      );
+      mobileFeature3Tl.to(
+        ".feature3-frame1",
+        { x: "-20%", duration: 1, ease: "none" },
+        "<"
+      );
+      mobileFeature3Tl.to("#lado1-mov1", {
+        morphSVG: "#lado1-mov3",
+        duration: 1,
+        ease: "none",
+      });
+      mobileFeature3Tl.to(
+        "#lado2-mov1",
+        { morphSVG: "#lado2-mov3", duration: 1, ease: "none" },
+        "<"
+      );
+      mobileFeature3Tl.to(
+        "#lado3-mov1",
+        { morphSVG: "#lado3-mov3", duration: 1, ease: "none" },
+        "<"
+      );
+      mobileFeature3Tl.to(
+        ".feature3-frame1",
+        { x: "10%", duration: 1, ease: "none" },
+        "<"
+      );
+      mobileFeature3Tl.to("#lado1-mov1", {
+        morphSVG: "#lado1-mov4",
+        duration: 1,
+        ease: "none",
+      });
+      mobileFeature3Tl.to(
+        "#lado2-mov1",
+        { morphSVG: "#lado2-mov4", duration: 1, ease: "none" },
+        "<"
+      );
+      mobileFeature3Tl.to(
+        "#lado3-mov1",
+        { morphSVG: "#lado3-mov4", duration: 1, ease: "none" },
+        "<"
+      );
+      mobileFeature3Tl.to(
+        ".feature3-frame1",
+        { x: "13%", duration: 1, ease: "none" },
+        "<"
+      );
+      mobileFeature3Tl.to("#lado1-mov1", {
+        morphSVG: "#lado1-mov5",
+        duration: 1,
+        ease: "none",
+      });
+      mobileFeature3Tl.to(
+        "#lado2-mov1",
+        { morphSVG: "#lado2-mov5", duration: 1, ease: "none" },
+        "<"
+      );
+      mobileFeature3Tl.to(
+        "#lado3-mov1",
+        { morphSVG: "#lado3-mov5", duration: 1, ease: "none" },
+        "<"
+      );
+      mobileFeature3Tl.to(
+        ".feature3-frame1",
+        { x: "17%", duration: 1, ease: "none" },
+        "<"
+      );
+      mobileFeature3Tl.to("#lado1-mov1", {
+        morphSVG: "#lado1-mov6",
+        duration: 1,
+        ease: "none",
+      });
+      mobileFeature3Tl.to(
+        "#lado2-mov1",
+        { morphSVG: "#lado2-mov6", duration: 1, ease: "none" },
+        "<"
+      );
+      mobileFeature3Tl.to(
+        "#lado3-mov1",
+        { morphSVG: "#lado3-mov6", duration: 1, ease: "none" },
+        "<"
+      );
+      mobileFeature3Tl.to(
+        ".feature3-frame1",
+        { x: "27%", duration: 1, ease: "none" },
+        "<"
+      );
+      mobileFeature3Tl.to(".feature3-frame1", {
+        x: "97%",
+        opacity: 0,
+        duration: 1,
+        ease: "none",
+      });
+
+      mobileFeature3Tl.set(".feature3-frame1", {
+        x: "7%",
+        opacity: 0,
+      });
+
+      mobileFeature3Tl.to(".feature3-take2-frame1 ", {
+        opacity: 1,
+        delay: 0.7,
+        duration: 1,
+        ease: "none",
+      });
+
+      mobileFeature3Tl.to(
+        "#lado1-take2-mov0",
+        { morphSVG: "#lado1-take2-mov1", duration: 1, ease: "none" },
+        "<"
+      );
+
+      mobileFeature3Tl.to(
+        "#lado1-take2-mov0",
+        { morphSVG: "#lado1-take2-mov2", duration: 1, ease: "none" },
+        "-=.3"
+      );
+
+      mobileFeature3Tl.to("#lado1-take2-mov0", {
+        morphSVG: "#lado1-take2-mov3",
+        duration: 1,
+        ease: "none",
+      });
+
+      mobileFeature3Tl.to("#lado1-take2-mov0", {
+        duration: 1,
+        opacity: 0,
+        ease: "none",
+      });
+
       heroTL.play();
     },
   });
@@ -1072,6 +1424,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   ScrollTrigger.create({
+    overwrite: true,
     trigger: ".feature2-animation-container",
     start: "top 70%",
     scrub: true,
@@ -1080,11 +1433,13 @@ document.addEventListener("DOMContentLoaded", () => {
         x: 0,
         duration: 4,
         ease: "power1.inOut",
+        overwrite: true,
       });
       gsap.to(".feature2-animation-container svg", {
         x: 0,
         duration: 4,
         ease: "power1.inOut",
+        overwrite: true,
       });
     },
     onEnterBack: () => {
@@ -1092,19 +1447,23 @@ document.addEventListener("DOMContentLoaded", () => {
         x: 0,
         duration: 4,
         ease: "power1.inOut",
+        overwrite: true,
       });
       gsap.to(".feature2-animation-container svg", {
         x: 0,
         duration: 4,
         ease: "power1.inOut",
+        overwrite: true,
       });
     },
     onLeave: () => {
       gsap.set(".feature2-animation-container img", {
         x: "-70%",
+        overwrite: true,
       });
       gsap.set(".feature2-animation-container svg", {
         x: "70%",
+        overwrite: true,
       });
     },
     onLeaveBack: () => {
@@ -1114,26 +1473,6 @@ document.addEventListener("DOMContentLoaded", () => {
       gsap.set(".feature2-animation-container svg", {
         x: "70%",
       });
-    },
-  });
-
-  gsap.to(".feature3-closeIMG", {
-    y: "-7%",
-    scrollTrigger: {
-      trigger: ".feature3",
-      start: "top center",
-      scrub: true,
-      ease: "none",
-    },
-  });
-
-  gsap.to(".feature3-closeIMG img", {
-    y: "10%",
-    scrollTrigger: {
-      trigger: ".feature3",
-      start: "top center",
-      scrub: true,
-      ease: "none",
     },
   });
 

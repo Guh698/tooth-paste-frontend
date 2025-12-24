@@ -5199,23 +5199,40 @@
           </div>
         </section>
         <section class="feature3 display-center">
-          <h2>Feito para ser visto.</h2>
-          <div class="feature3-closeIMG">
-            <img src="imgs/bathCloseUp.png" alt="" />
+          <div class="feature3-animation-container">
+            <h2>Feito para ser visto.</h2>
           </div>
-          <div class="feature3-text text">
-            <p>
-              Acabamento em <span>matte</span> profundo. Toque suave e
-              aveludado. Design minimalista. <span>Nocturna</span> não foi feito
-              para ficar na gaveta. Foi feito para o seu balcão.
-            </p>
-            <p>
-              Confiança que dura a noite toda. Da primeira bebida ao nascer do
-              sol, a sensação de frescor e polimento permanece.
-            </p>
+          <div class="feature3-text-container">
+            <div class="feature3-text text">
+              <p>
+                Acabamento em <span>matte</span> profundo. Toque suave e
+                aveludado. Design minimalista. <span>Nocturna</span> não foi
+                feito para ficar na gaveta. Foi feito para o seu balcão.
+              </p>
+              <p>
+                Confiança que dura a noite toda. Da primeira bebida ao nascer do
+                sol, a sensação de frescor e polimento permanece.
+              </p>
+            </div>
           </div>
         </section>
-        <section class="feature4"></section>
+        <section class="feature4 display-center">
+          <h2>O Círculo.</h2>
+          <div class="feature4-table">
+            <input
+              type="text"
+              id="username"
+              placeholder="Seu nome de usuário"
+            />
+            <input type="password" id="password" placeholder="Sua senha" />
+            <div class="feature4-btn display-center" id="joinButton">
+              Junte-se ao círculo
+            </div>
+            <div class="back-end-message">
+              <p id="backMessage"></p>
+            </div>
+          </div>
+        </section>
         <footer><div class="footer-overlay"></div></footer>
       </div>
     </div>
@@ -5233,5 +5250,6 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/MotionPathPlugin.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/DrawSVGPlugin.min.js"></script>
     <script src="script.js"></script>
+    <script src="config.js"></script>
   </body>
 </html>
