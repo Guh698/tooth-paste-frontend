@@ -1,21 +1,18 @@
-gsap.registerPlugin(
-  ScrollTrigger,
-  ScrollSmoother,
-  SplitText,
-  Draggable,
-  InertiaPlugin,
-  MorphSVGPlugin,
-  MotionPathPlugin,
-  DrawSVGPlugin,
-  Flip
-);
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText, MorphSVGPlugin);
+
+ScrollTrigger.normalizeScroll(true);
 
 document.addEventListener("DOMContentLoaded", () => {
+  ScrollTrigger.config({ ignoreMobileResize: true });
   const smoother = ScrollSmoother.create({
     wrapper: "#smooth-wrapper",
     content: "#smooth-content",
     smooth: 1,
+    effects: true,
+    normalizeScroll: true,
   });
+
+  let heroTL = gsap.timeline({ paused: true });
 
   function pauseScroll() {
     smoother.paused(true);
@@ -24,8 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
   function resumeScroll() {
     smoother.paused(false);
   }
-
-  let heroTL = gsap.timeline({ paused: true });
 
   function opening() {
     let tl = gsap.timeline({
@@ -1019,8 +1014,260 @@ document.addEventListener("DOMContentLoaded", () => {
     tl.to("#path56", { morphSVG: "#path56-mov2", duration: 0.5 }, "<");
   }
 
+  function feature3() {
+    let feature3Tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".feature3",
+        start: "top top",
+        end: "+=6000",
+        scrub: true,
+        pin: true,
+        anticipatePin: 1,
+        ease: "none",
+      },
+    });
+
+    feature3Tl.to(".feature3-animation-container h2", {
+      opacity: 1,
+      duration: 3,
+    });
+    feature3Tl.to(
+      ".feature3-animation-container h2",
+      {
+        opacity: 0,
+        duration: 3,
+      },
+      "+=7"
+    );
+    feature3Tl.to(".feature3-frame1", {
+      opacity: 1,
+      duration: 3,
+      ease: "none",
+    });
+    feature3Tl.to(
+      "#lado1",
+      {
+        morphSVG: "#lado1-mov2",
+        duration: 3,
+        ease: "none",
+      },
+      "<"
+    );
+    feature3Tl.to(
+      "#lado2",
+      {
+        morphSVG: "#lado2-mov2",
+        duration: 3,
+        ease: "none",
+      },
+      "<"
+    );
+    feature3Tl.to(
+      "#lado3",
+      {
+        morphSVG: "#lado3-mov2",
+        duration: 3,
+        ease: "none",
+      },
+      "<"
+    );
+    feature3Tl.to(
+      "#lado4",
+      {
+        morphSVG: "#lado4-mov2",
+        duration: 3,
+        ease: "none",
+      },
+      "<"
+    );
+    feature3Tl.to(
+      "#lado5",
+      {
+        morphSVG: "#lado5-mov2",
+        duration: 3,
+        ease: "none",
+      },
+      "<"
+    );
+    feature3Tl.to(
+      "#lado6",
+      {
+        morphSVG: "#lado6-mov2",
+        duration: 3,
+        ease: "none",
+      },
+      "<"
+    );
+    feature3Tl.to("#lado1", {
+      morphSVG: "#lado1-mov3",
+      duration: 3,
+      ease: "none",
+    });
+    feature3Tl.to(
+      "#lado2",
+      { morphSVG: "#lado2-mov3", duration: 3, ease: "none" },
+      "<"
+    );
+    feature3Tl.to(
+      "#lado3",
+      { morphSVG: "#lado3-mov3", duration: 3, ease: "none" },
+      "<"
+    );
+    feature3Tl.to(
+      "#lado4",
+      { morphSVG: "#lado4-mov3", duration: 3, ease: "none" },
+      "<"
+    );
+    feature3Tl.to(
+      "#lado5",
+      { morphSVG: "#lado5-mov3", duration: 3, ease: "none" },
+      "<"
+    );
+    feature3Tl.to(
+      "#lado6",
+      { morphSVG: "#lado6-mov3", duration: 3, ease: "none" },
+      "<"
+    );
+    feature3Tl.to(
+      ".feature3-frame1",
+      { x: "3%", y: "-60%", duration: 3, ease: "none" },
+      "<"
+    );
+    feature3Tl.to("#lado1", {
+      morphSVG: "#lado1-mov4",
+      duration: 3,
+      ease: "none",
+    });
+    feature3Tl.to(
+      "#lado2",
+      { morphSVG: "#lado2-mov4", duration: 3, ease: "none" },
+      "<"
+    );
+    feature3Tl.to(
+      "#lado3",
+      { morphSVG: "#lado3-mov4", duration: 3, ease: "none" },
+      "<"
+    );
+    feature3Tl.to(
+      "#lado4",
+      { morphSVG: "#lado4-mov4", duration: 3, ease: "none" },
+      "<"
+    );
+    feature3Tl.to(
+      "#lado5",
+      { morphSVG: "#lado5-mov4", duration: 3, ease: "none" },
+      "<"
+    );
+    feature3Tl.to(
+      "#lado6",
+      { morphSVG: "#lado6-mov4", duration: 3, ease: "none" },
+      "<"
+    );
+    feature3Tl.to(
+      ".feature3-frame1",
+      { x: "0%", duration: 3, ease: "none" },
+      "<"
+    );
+    feature3Tl.to("#lado1", {
+      morphSVG: "#lado1-mov5",
+      duration: 3,
+      ease: "none",
+    });
+    feature3Tl.to(
+      "#lado2",
+      { morphSVG: "#lado2-mov5", duration: 3, ease: "none" },
+      "<"
+    );
+    feature3Tl.to(
+      "#lado3",
+      { morphSVG: "#lado3-mov5", duration: 3, ease: "none" },
+      "<"
+    );
+    feature3Tl.to(
+      "#lado4",
+      { morphSVG: "#lado4-mov5", duration: 3, ease: "none" },
+      "<"
+    );
+    feature3Tl.to(
+      "#lado5",
+      { morphSVG: "#lado5-mov5", duration: 3, ease: "none" },
+      "<"
+    );
+    feature3Tl.to(
+      "#lado6",
+      { morphSVG: "#lado6-mov5", duration: 3, ease: "none" },
+      "<"
+    );
+    feature3Tl.to(
+      ".feature3-frame1",
+      { x: "5%", duration: 3, ease: "none" },
+      "<"
+    );
+    feature3Tl.to("#lado1", {
+      morphSVG: "#lado1-mov6",
+      duration: 3,
+      ease: "none",
+    });
+    feature3Tl.to(
+      "#lado2",
+      { morphSVG: "#lado2-mov6", duration: 3, ease: "none" },
+      "<"
+    );
+    feature3Tl.to(
+      "#lado3",
+      { morphSVG: "#lado3-mov6", duration: 3, ease: "none" },
+      "<"
+    );
+    feature3Tl.to(
+      "#lado4",
+      { morphSVG: "#lado4-mov6", duration: 3, ease: "none" },
+      "<"
+    );
+    feature3Tl.to(
+      "#lado5",
+      { morphSVG: "#lado5-mov6", duration: 3, ease: "none" },
+      "<"
+    );
+    feature3Tl.to(
+      "#lado6",
+      { morphSVG: "#lado6-mov6", duration: 3, ease: "none" },
+      "<"
+    );
+    feature3Tl.to("#lado1", {
+      morphSVG: "#lado1-mov7",
+      duration: 3,
+      ease: "none",
+    });
+    feature3Tl.to(
+      "#lado2",
+      { morphSVG: "#lado2-mov7", duration: 3, ease: "none" },
+      "<"
+    );
+    feature3Tl.to(
+      "#lado3",
+      { morphSVG: "#lado3-mov7", duration: 3, ease: "none" },
+      "<"
+    );
+    feature3Tl.to(
+      "#lado4",
+      { morphSVG: "#lado4-mov7", duration: 3, ease: "none" },
+      "<"
+    );
+    feature3Tl.to(
+      "#lado5",
+      { morphSVG: "#lado5-mov7", duration: 3, ease: "none" },
+      "<"
+    );
+    feature3Tl.to(
+      "#lado6",
+      { morphSVG: "#lado6-mov7", duration: 3, ease: "none" },
+      "<"
+    );
+  }
+
   ScrollTrigger.matchMedia({
     "(min-width: 1024px)": function () {
+      feature3();
       let momentsTL = gsap.timeline({
         scrollTrigger: {
           trigger: ".feature1",
@@ -1044,188 +1291,6 @@ document.addEventListener("DOMContentLoaded", () => {
       momentsTL.to(".img6", { opacity: 1, scaleX: 1 }, "-=0.7");
       momentsTL.to(".img6", { y: "-100%" }, "-=0.1");
 
-      let feature3Tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".feature3",
-          start: "top top",
-          end: "+=6000",
-          scrub: true,
-          pin: true,
-          ease: "none",
-        },
-      });
-
-      /*feature3Tl.to(".feature3-animation-container h2", {
-        opacity: 1,
-        duration: 3,
-      });
-      feature3Tl.to(
-        ".feature3-animation-container h2",
-        {
-          opacity: 0,
-          duration: 3,
-        },
-        "+=7"
-      );*/
-
-      /*feature3Tl.to(".feature3-frame1", {
-        opacity: 1,
-        duration: 3,
-        ease: "none",
-      });*/
-      feature3Tl.to(
-        "#lado1-mov1",
-        {
-          morphSVG: "#lado1-mov2",
-          align: "#lado1-mov1",
-          transformOrigin: "50% 50%",
-          duration: 3,
-          ease: "none",
-        },
-        "<"
-      );
-      feature3Tl.to(
-        "#lado2-mov1",
-        {
-          morphSVG: "#lado2-mov2",
-          align: "#lado2-mov1",
-          duration: 3,
-          ease: "none",
-        },
-        "<"
-      );
-      feature3Tl.to(
-        "#lado3-mov1",
-        {
-          morphSVG: "#lado3-mov2",
-          align: "#lado3-mov1",
-          duration: 3,
-          ease: "none",
-        },
-        "<"
-      );
-      /*.to(
-        ".feature3-frame1",
-        { x: 0, duration: 3, ease: "none" },
-        "<"
-      );*/
-      /*  feature3Tl.to("#lado1-mov1", {
-        morphSVG: "#lado1-mov3",
-        duration: 3,
-        ease: "none",
-      });
-      feature3Tl.to(
-        "#lado2-mov1",
-        { morphSVG: "#lado2-mov3", duration: 3, ease: "none" },
-        "<"
-      );
-      feature3Tl.to(
-        "#lado3-mov1",
-        { morphSVG: "#lado3-mov3", duration: 3, ease: "none" },
-        "<"
-      );
-      feature3Tl.to(
-        ".feature3-frame1",
-        { x: 0, duration: 3, ease: "none" },
-        "<"
-      );
-      feature3Tl.to("#lado1-mov1", {
-        morphSVG: "#lado1-mov4",
-        duration: 3,
-        ease: "none",
-      });
-      feature3Tl.to(
-        "#lado2-mov1",
-        { morphSVG: "#lado2-mov4", duration: 3, ease: "none" },
-        "<"
-      );
-      feature3Tl.to(
-        "#lado3-mov1",
-        { morphSVG: "#lado3-mov4", duration: 3, ease: "none" },
-        "<"
-      );
-      feature3Tl.to(
-        ".feature3-frame1",
-        { x: "3%", duration: 3, ease: "none" },
-        "<"
-      );
-      feature3Tl.to("#lado1-mov1", {
-        morphSVG: "#lado1-mov5",
-        duration: 3,
-        ease: "none",
-      });
-      feature3Tl.to(
-        "#lado2-mov1",
-        { morphSVG: "#lado2-mov5", duration: 3, ease: "none" },
-        "<"
-      );
-      feature3Tl.to(
-        "#lado3-mov1",
-        { morphSVG: "#lado3-mov5", duration: 3, ease: "none" },
-        "<"
-      );
-      feature3Tl.to(
-        ".feature3-frame1",
-        { x: "7%", duration: 3, ease: "none" },
-        "<"
-      );
-      feature3Tl.to("#lado1-mov1", {
-        morphSVG: "#lado1-mov6",
-        duration: 3,
-        ease: "none",
-      });
-      feature3Tl.to(
-        "#lado2-mov1",
-        { morphSVG: "#lado2-mov6", duration: 2, ease: "none" },
-        "<"
-      );
-      feature3Tl.to(
-        "#lado3-mov1",
-        { morphSVG: "#lado3-mov6", duration: 3, ease: "none" },
-        "<"
-      );
-      feature3Tl.to(
-        ".feature3-frame1",
-        { x: "27%", duration: 3, ease: "none" },
-        "<"
-      );
-      feature3Tl.to(".feature3-frame1", {
-        x: "97%",
-        opacity: 0,
-        duration: 3,
-        ease: "none",
-      });
-
-      feature3Tl.set(".feature3-frame1", {
-        x: "7%",
-        opacity: 0,
-      });
-
-      feature3Tl.to(".feature3-take2-frame1 ", {
-        opacity: 1,
-        delay: 1.7,
-        duration: 3,
-        ease: "none",
-      });
-
-      feature3Tl.to(
-        "#lado1-take2-mov0",
-        { morphSVG: "#lado1-take2-mov1", duration: 3, ease: "none" },
-        "<"
-      );
-
-      feature3Tl.to(
-        "#lado1-take2-mov0",
-        { morphSVG: "#lado1-take2-mov2", duration: 3, ease: "none" },
-        "-=.3"
-      );
-
-      feature3Tl.to("#lado1-take2-mov0", {
-        morphSVG: "#lado1-take2-mov3",
-        duration: 3,
-        ease: "none",
-      });*/
-
       /* pauseScroll();
       opening();*/
       gsap.set([".hero, header"], { opacity: 1 });
@@ -1233,174 +1298,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     "(max-width: 1024px)": function () {
       gsap.set([".hero, header"], { opacity: 1 });
-      let mobileFeature3Tl = gsap.timeline({
-        repeat: -1,
-        ease: "none",
-      });
-
-      mobileFeature3Tl.to(".feature3-animation-container h2", {
-        opacity: 1,
-        duration: 1,
-        delay: 0.7,
-      });
-
-      mobileFeature3Tl.to(
-        ".feature3-animation-container h2",
-        {
-          opacity: 0,
-          duration: 1,
-        },
-        "+=1"
-      );
-
-      mobileFeature3Tl.to(".feature3-frame1", {
-        opacity: 1,
-        duration: 1,
-        ease: "none",
-      });
-      mobileFeature3Tl.to(
-        "#lado1-mov1",
-        { morphSVG: "#lado1-mov2", duration: 1, ease: "none" },
-        "<"
-      );
-      mobileFeature3Tl.to(
-        "#lado2-mov1",
-        { morphSVG: "#lado2-mov2", duration: 1, ease: "none" },
-        "<"
-      );
-      mobileFeature3Tl.to(
-        "#lado3-mov1",
-        { morphSVG: "#lado3-mov2", duration: 1, ease: "none" },
-        "<"
-      );
-      mobileFeature3Tl.to(
-        ".feature3-frame1",
-        { x: "-20%", duration: 1, ease: "none" },
-        "<"
-      );
-      mobileFeature3Tl.to("#lado1-mov1", {
-        morphSVG: "#lado1-mov3",
-        duration: 1,
-        ease: "none",
-      });
-      mobileFeature3Tl.to(
-        "#lado2-mov1",
-        { morphSVG: "#lado2-mov3", duration: 1, ease: "none" },
-        "<"
-      );
-      mobileFeature3Tl.to(
-        "#lado3-mov1",
-        { morphSVG: "#lado3-mov3", duration: 1, ease: "none" },
-        "<"
-      );
-      mobileFeature3Tl.to(
-        ".feature3-frame1",
-        { x: "10%", duration: 1, ease: "none" },
-        "<"
-      );
-      mobileFeature3Tl.to("#lado1-mov1", {
-        morphSVG: "#lado1-mov4",
-        duration: 1,
-        ease: "none",
-      });
-      mobileFeature3Tl.to(
-        "#lado2-mov1",
-        { morphSVG: "#lado2-mov4", duration: 1, ease: "none" },
-        "<"
-      );
-      mobileFeature3Tl.to(
-        "#lado3-mov1",
-        { morphSVG: "#lado3-mov4", duration: 1, ease: "none" },
-        "<"
-      );
-      mobileFeature3Tl.to(
-        ".feature3-frame1",
-        { x: "13%", duration: 1, ease: "none" },
-        "<"
-      );
-      mobileFeature3Tl.to("#lado1-mov1", {
-        morphSVG: "#lado1-mov5",
-        duration: 1,
-        ease: "none",
-      });
-      mobileFeature3Tl.to(
-        "#lado2-mov1",
-        { morphSVG: "#lado2-mov5", duration: 1, ease: "none" },
-        "<"
-      );
-      mobileFeature3Tl.to(
-        "#lado3-mov1",
-        { morphSVG: "#lado3-mov5", duration: 1, ease: "none" },
-        "<"
-      );
-      mobileFeature3Tl.to(
-        ".feature3-frame1",
-        { x: "17%", duration: 1, ease: "none" },
-        "<"
-      );
-      mobileFeature3Tl.to("#lado1-mov1", {
-        morphSVG: "#lado1-mov6",
-        duration: 1,
-        ease: "none",
-      });
-      mobileFeature3Tl.to(
-        "#lado2-mov1",
-        { morphSVG: "#lado2-mov6", duration: 1, ease: "none" },
-        "<"
-      );
-      mobileFeature3Tl.to(
-        "#lado3-mov1",
-        { morphSVG: "#lado3-mov6", duration: 1, ease: "none" },
-        "<"
-      );
-      mobileFeature3Tl.to(
-        ".feature3-frame1",
-        { x: "27%", duration: 1, ease: "none" },
-        "<"
-      );
-      mobileFeature3Tl.to(".feature3-frame1", {
-        x: "97%",
-        opacity: 0,
-        duration: 1,
-        ease: "none",
-      });
-
-      mobileFeature3Tl.set(".feature3-frame1", {
-        x: "7%",
-        opacity: 0,
-      });
-
-      mobileFeature3Tl.to(".feature3-take2-frame1 ", {
-        opacity: 1,
-        delay: 0.7,
-        duration: 1,
-        ease: "none",
-      });
-
-      mobileFeature3Tl.to(
-        "#lado1-take2-mov0",
-        { morphSVG: "#lado1-take2-mov1", duration: 1, ease: "none" },
-        "<"
-      );
-
-      mobileFeature3Tl.to(
-        "#lado1-take2-mov0",
-        { morphSVG: "#lado1-take2-mov2", duration: 1, ease: "none" },
-        "-=.3"
-      );
-
-      mobileFeature3Tl.to("#lado1-take2-mov0", {
-        morphSVG: "#lado1-take2-mov3",
-        duration: 1,
-        ease: "none",
-      });
-
-      mobileFeature3Tl.to("#lado1-take2-mov0", {
-        duration: 1,
-        opacity: 0,
-        ease: "none",
-      });
-
+      feature3();
       heroTL.play();
     },
   });
@@ -1429,13 +1327,13 @@ document.addEventListener("DOMContentLoaded", () => {
     start: "top 70%",
     scrub: true,
     onEnter: () => {
-      gsap.to(".feature2-animation-container img", {
+      gsap.to(".feature2-animation-container .pastaCaixa", {
         x: 0,
         duration: 4,
         ease: "power1.inOut",
         overwrite: true,
       });
-      gsap.to(".feature2-animation-container svg", {
+      gsap.to(".feature2-animation-container .pastaTubo", {
         x: 0,
         duration: 4,
         ease: "power1.inOut",
@@ -1443,13 +1341,13 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     },
     onEnterBack: () => {
-      gsap.to(".feature2-animation-container img", {
+      gsap.to(".feature2-animation-container .pastaCaixa", {
         x: 0,
         duration: 4,
         ease: "power1.inOut",
         overwrite: true,
       });
-      gsap.to(".feature2-animation-container svg", {
+      gsap.to(".feature2-animation-container .pastaTubo", {
         x: 0,
         duration: 4,
         ease: "power1.inOut",
@@ -1457,20 +1355,20 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     },
     onLeave: () => {
-      gsap.set(".feature2-animation-container img", {
+      gsap.set(".feature2-animation-container .pastaCaixa", {
         x: "-70%",
         overwrite: true,
       });
-      gsap.set(".feature2-animation-container svg", {
+      gsap.set(".feature2-animation-container .pastaTubo", {
         x: "70%",
         overwrite: true,
       });
     },
     onLeaveBack: () => {
-      gsap.set(".feature2-animation-container img", {
+      gsap.set(".feature2-animation-container .pastaCaixa", {
         x: "-70%",
       });
-      gsap.set(".feature2-animation-container svg", {
+      gsap.set(".feature2-animation-container .pastaTubo", {
         x: "70%",
       });
     },
