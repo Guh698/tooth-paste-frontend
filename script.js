@@ -1029,7 +1029,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     feature3Tl.to(".feature3-animation-container h2", {
       opacity: 1,
-      duration: 3,
+      duration: 2,
     });
     feature3Tl.to(
       ".feature3-animation-container h2",
